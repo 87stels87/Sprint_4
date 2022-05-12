@@ -6,7 +6,6 @@ public class Account {
         this.name = name;
     }
 
-
     public boolean checkNameToEmboss() {
         if (name.length() >= 19 || name.length() < 3) {
             return false;
