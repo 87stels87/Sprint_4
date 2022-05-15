@@ -7,11 +7,11 @@ import org.junit.runners.Parameterized;
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class AccountParemetrizedNegativeTest {
+public class AccountParemetrizedTest {
     private final String name;
     private final boolean expected;
 
-    public AccountParemetrizedNegativeTest(String name, boolean expected) {
+    public AccountParemetrizedTest(String name, boolean expected) {
         this.name = name;
         this.expected = expected;
     }
@@ -30,6 +30,9 @@ public class AccountParemetrizedNegativeTest {
                 {"Фам илия Имя Ф", false},
                 {" ФАМИЛИЯ ИМЯ", false},
                 {"фио", false},
+                {"ф о", true},
+                {"1234567890123456 78", true},
+                {"1234567890123456 781", false},
         };
     }
     @Test

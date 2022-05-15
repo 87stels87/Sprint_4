@@ -1,13 +1,15 @@
 public class Account {
 
-    private final String name;
+    private String name;
 
     public Account(String name) {
         this.name = name;
     }
+    public Account() {
+    }
 
     public boolean checkNameToEmboss() {
-        if (name.length() >= 19 || name.length() < 3) {
+        if (name.length() > 19 || name.length() < 3) {
             return false;
         }
         if (!name.trim().contains(" ")) {
@@ -16,8 +18,12 @@ public class Account {
         if (name.charAt(0) == ' ' || name.charAt(name.length() - 1) == ' ') {
             return false;
         }
-        if (name.trim().split(" ").length > 2)
+        if (name.trim().split(" ").length > 2) {
             return false;
+        }
+        if (name == null) {
+            return false;
+        }
         return true;
     }
 
