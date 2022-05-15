@@ -21,9 +21,6 @@ public class Account {
         if (name.trim().split(" ").length > 2) {
             return false;
         }
-        if (name == null) {
-            return false;
-        }
         return true;
     }
 
